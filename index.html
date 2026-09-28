@@ -168,36 +168,10 @@
       .hero-grid, .project-top, .two-col, .about-grid { grid-template-columns:1fr; }
       .impact-grid { grid-template-columns:repeat(2,1fr); }
       .how-grid { grid-template-columns:repeat(2,1fr); }
-      .process-line {
-  grid-template-columns: 1fr;
-  gap: 0;
-  width: 100%;
-  min-width: 0;
-}
-
-.process-line:before {
-  left: 7px;
-  right: auto;
-  top: 18px;
-  bottom: 18px;
-  width: 1px;
-  height: auto;
-}
-
-.process-step {
-  min-width: 0;
-  padding: 0 0 28px 40px;
-}
-
-.process-step:before {
-  top: 4px;
-  left: 0;
-}
-
-.process-step p {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
+      .process-line { grid-template-columns:1fr; gap:0; }
+      .process-line:before { left:6px; right:auto; top:18px; bottom:18px; height:auto; width:1px; }
+      .process-step { padding:0 0 24px 38px; }
+      .process-step:before { top:3px; }
       .tool-grid { grid-template-columns:1fr; }
       .contact-card { grid-template-columns:1fr; }
       .contact-links { justify-content:flex-start; }
@@ -229,6 +203,52 @@
     .process-step p { margin:0; color:var(--muted); font-size:13px; line-height:1.5; }
 
     @media (max-width: 900px) { .lang-switch { margin-left:auto; } }
+
+    /* FINAL MOBILE FIX: How I Work becomes a vertical timeline */
+    @media (max-width: 900px) {
+      #process {
+        overflow-x: hidden;
+      }
+
+      #process .process-line {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 0 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      #process .process-line::before {
+        left: 7px !important;
+        right: auto !important;
+        top: 18px !important;
+        bottom: 18px !important;
+        width: 1px !important;
+        height: auto !important;
+      }
+
+      #process .process-step {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 0 28px 40px !important;
+      }
+
+      #process .process-step::before {
+        top: 4px !important;
+        left: 0 !important;
+      }
+
+      #process .process-step h4,
+      #process .process-step p {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        white-space: normal !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+    }
+
 </style>
 <meta content="Portfolio di AI Engineer: LLM locali, RAG, Computer Vision, Edge AI, training distribuito, ottimizzazione dell’inferenza e deployment di sistemi AI reali." name="description-it"/></head>
 <body>
