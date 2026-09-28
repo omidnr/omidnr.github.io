@@ -168,10 +168,36 @@
       .hero-grid, .project-top, .two-col, .about-grid { grid-template-columns:1fr; }
       .impact-grid { grid-template-columns:repeat(2,1fr); }
       .how-grid { grid-template-columns:repeat(2,1fr); }
-      .process-line { grid-template-columns:1fr; gap:0; }
-      .process-line:before { left:6px; right:auto; top:18px; bottom:18px; height:auto; width:1px; }
-      .process-step { padding:0 0 24px 38px; }
-      .process-step:before { top:3px; }
+      .process-line {
+  grid-template-columns: 1fr;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.process-line:before {
+  left: 7px;
+  right: auto;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  height: auto;
+}
+
+.process-step {
+  min-width: 0;
+  padding: 0 0 28px 40px;
+}
+
+.process-step:before {
+  top: 4px;
+  left: 0;
+}
+
+.process-step p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
       .tool-grid { grid-template-columns:1fr; }
       .contact-card { grid-template-columns:1fr; }
       .contact-links { justify-content:flex-start; }
